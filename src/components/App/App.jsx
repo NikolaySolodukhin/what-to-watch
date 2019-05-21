@@ -1,8 +1,20 @@
-import React from "react";
+import React, {Component} from "react";
 import {WelcomeScreen} from "./../WelcomeScreen/WelcomeScreen.jsx";
+import PropTypes from "prop-types";
 
-const FILMS_LIST = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
+export default class App extends Component {
+  render() {
+    const {films} = this.props;
 
-export const App = () => {
-  return <WelcomeScreen films={FILMS_LIST} />;
+    return (
+      <WelcomeScreen
+        films={films}
+      />
+    );
+  }
+}
+
+
+App.propTypes = {
+  films: PropTypes.array.isRequired
 };

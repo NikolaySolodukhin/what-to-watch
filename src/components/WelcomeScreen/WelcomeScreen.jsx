@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 
-export const WelcomeScreen = ({films}) => {
+export const WelcomeScreen = ({films, onTitleClick}) => {
   return (
     <Fragment>
       <div className="visually-hidden">
@@ -145,7 +145,7 @@ export const WelcomeScreen = ({films}) => {
                   <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
                     alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
                 </div>
-                <h3 className="small-movie-card__title">
+                <h3 className="small-movie-card__title" onClick={onTitleClick}>
                   <a className="small-movie-card__link" href="movie-page.html">{film}</a>
                 </h3>
               </article>
@@ -158,5 +158,6 @@ export const WelcomeScreen = ({films}) => {
 };
 
 WelcomeScreen.propTypes = {
-  films: PropTypes.array.isRequired
+  films: PropTypes.array.isRequired,
+  onTitleClick: PropTypes.func
 };
