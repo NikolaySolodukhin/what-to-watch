@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {App} from "./components/App/App.jsx";
-export const FILMS_LIST = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
+import App from "./components/App/App.jsx";
+import {filmsList} from "./components/mocks/films";
 
-ReactDOM.render(<App films={FILMS_LIST} />, document.getElementById(`root`));
+ReactDOM.render(<App films={filmsList} />, document.getElementById(`root`));

@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
+import CatalogMoviesList from "./../CatalogMovieList/CatalogMovieList.jsx";
 
 export const WelcomeScreen = ({films, onTitleClick}) => {
   return (
@@ -138,18 +139,9 @@ export const WelcomeScreen = ({films, onTitleClick}) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {films.map((film) => (
-              <article key={film} className="small-movie-card catalog__movies-card">
-                <button className="small-movie-card__play-btn" type="button">Play</button>
-                <div className="small-movie-card__image">
-                  <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                    alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
-                </div>
-                <h3 className="small-movie-card__title" onClick={onTitleClick}>
-                  <a className="small-movie-card__link" href="movie-page.html">{film}</a>
-                </h3>
-              </article>
-            ))}
+            <CatalogMoviesList
+              filmsList={films}
+              onTitleClick={onTitleClick}/>
           </div>
         </section>
       </div>

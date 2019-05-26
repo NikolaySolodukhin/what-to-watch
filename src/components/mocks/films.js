@@ -1,9 +1,4 @@
-import React from "react";
-import renderer from "react-test-renderer";
-
-import {WelcomeScreen} from "./WelcomeScreen";
-
-const FILMS_LIST = [{
+export const filmsList = [{
   id: 1,
   title: `Fantastic Beasts`,
   image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
@@ -24,9 +19,3 @@ const FILMS_LIST = [{
   title: `We need to talk about Kevin`,
   image: `img/we-need-to-talk-about-kevin.jpg`
 }];
-
-it(`WelcomeScreen is rendered correctly`, () => {
-  const tree = renderer.create(<WelcomeScreen films={FILMS_LIST} />).toJSON();
-
-  expect(tree).toMatchSnapshot();
-});
