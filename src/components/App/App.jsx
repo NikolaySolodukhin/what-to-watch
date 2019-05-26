@@ -6,9 +6,14 @@ export default class App extends Component {
   render() {
     const {films} = this.props;
 
+    const onTitleClick = function (event) {
+      event.preventDefault();
+    };
+
     return (
       <WelcomeScreen
         films={films}
+        onTitleClick={onTitleClick}
       />
     );
   }
@@ -16,5 +21,6 @@ export default class App extends Component {
 
 
 App.propTypes = {
-  films: PropTypes.array.isRequired
+  films: PropTypes.array.isRequired,
+  onTitleClick: PropTypes.func
 };
