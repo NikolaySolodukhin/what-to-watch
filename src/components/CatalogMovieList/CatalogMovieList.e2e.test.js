@@ -9,7 +9,8 @@ describe(`<CatalogMoviesList/>`, () => {
   const filmsList = [{
     id: 1,
     title: `Fantastic Beasts`,
-    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   }];
 
   it(`CatalogMoviesList correctly click article title`, () => {
@@ -20,11 +21,19 @@ describe(`<CatalogMoviesList/>`, () => {
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
 
-  it(`CatalogMoviesList correctly switch state.activeFilm`, () => {
+  it(`CatalogMoviesList correctly set state.activeFilm`, () => {
     const app = mount(<CatalogMoviesList filmsList={filmsList}/>);
-    const playBtn = app.find(`.small-movie-card__play-btn`);
-    playBtn.simulate(`click`);
+    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
+    moviesCard.simulate(`mouseEnter`);
     expect(app.state(`activeFilm`)).toEqual(filmsList[0]);
+  });
+
+
+  it(`CatalogMoviesList correctly remove state.activeFilm`, () => {
+    const app = mount(<CatalogMoviesList filmsList={filmsList}/>);
+    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
+    moviesCard.simulate(`mouseLeave`);
+    expect(app.state(`activeFilm`)).toEqual(null);
   });
 
 });
