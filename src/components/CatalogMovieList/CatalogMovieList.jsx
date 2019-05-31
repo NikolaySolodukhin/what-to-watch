@@ -10,9 +10,15 @@ export default class CatalogMoviesList extends PureComponent {
     };
   }
 
-  _onPlayBtnClick(film) {
+  _onMouseEnterCard(film) {
     this.setState({
       activeFilm: film,
+    });
+  }
+
+  _onMouseLeaveCard() {
+    this.setState({
+      activeFilm: null,
     });
   }
 
@@ -25,7 +31,9 @@ export default class CatalogMoviesList extends PureComponent {
             key={film.id}
             film={film}
             onTitleClick={onTitleClick}
-            onPlayBtnClick={() => this._onPlayBtnClick(film)}/>;
+            onMouseEnterCard={() => this._onMouseEnterCard(film)}
+            onMouseLeaveCard={() => this._onMouseLeaveCard()}
+          />;
         })}
       </div>
     );
