@@ -1,39 +1,13 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-
+import Enzyme, {shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import {shallowToJson} from 'enzyme-to-json';
+Enzyme.configure({adapter: new Adapter()});
 import App from './App.jsx';
 
-const FILMS_LIST = [{
-  id: 1,
-  title: `Fantastic Beasts`,
-  image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-  video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-}, {
-  id: 2,
-  title: `Bohemian Rhapsody`,
-  image: `img/bohemian-rhapsody.jpg`,
-  video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-}, {
-  id: 3,
-  title: `Macbeth`,
-  image: `img/macbeth.jpg`,
-  video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-}, {
-  id: 4,
-  title: `Aviator`,
-  image: `img/aviator.jpg`,
-  video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-}, {
-  id: 5,
-  title: `We need to talk about Kevin`,
-  image: `img/we-need-to-talk-about-kevin.jpg`,
-  video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-}];
-
-it(`App is rendered correctly`, () => {
-  const tree = renderer.create(<App
-    films={FILMS_LIST}
-  />).toJSON();
-
-  expect(tree).toMatchSnapshot();
+describe(`<App/>`, () => {
+  it(`App renders correctly`, () => {
+    const tree = shallow(<App/>);
+    expect(shallowToJson(tree)).toMatchSnapshot();
+  });
 });

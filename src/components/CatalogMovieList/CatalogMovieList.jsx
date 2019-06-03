@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import SmallMovieCard from './../SmallMovieCard/SmallMovieCard.jsx';
+import {connect} from "react-redux";
 
-export default class CatalogMoviesList extends PureComponent {
+class CatalogMoviesList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +42,14 @@ export default class CatalogMoviesList extends PureComponent {
 }
 
 CatalogMoviesList.propTypes = {
-  filmsList: PropTypes.array.isRequired,
+  filmsList: PropTypes.arrayOf(PropTypes.object).isRequired,
   onTitleClick: PropTypes.func,
 };
+
+const mapStateToProps = (state) => ({
+  filmsList: state.filmsList,
+});
+
+export {CatalogMoviesList};
+
+export default connect(mapStateToProps)(CatalogMoviesList);
