@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {GenresList} from "./GenreList";
+import {GenresList} from './GenreList';
 
 Enzyme.configure({adapter: new Adapter()});
 

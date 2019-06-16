@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import VideoPlayer from "./VideoPlayer";
+
+import VideoPlayer from './VideoPlayer';
 
 describe(`<VideoPlayer/>`, () => {
   it(`VideoPlayer renders correctly`, () => {

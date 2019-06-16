@@ -1,6 +1,7 @@
-import React, {Component} from "react";
-import WelcomeScreen from "./../WelcomeScreen/WelcomeScreen.jsx";
-import PropTypes from "prop-types";
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
+import WelcomeScreen from './../WelcomeScreen/WelcomeScreen.jsx';
 
 export default class App extends Component {
   render() {

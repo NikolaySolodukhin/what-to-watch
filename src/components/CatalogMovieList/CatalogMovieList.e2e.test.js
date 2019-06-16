@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {CatalogMoviesList} from "./CatalogMovieList";
+import {CatalogMoviesList} from './CatalogMovieList';
 
 Enzyme.configure({adapter: new Adapter()});
 
@@ -21,20 +21,4 @@ describe(`<CatalogMoviesList/>`, () => {
     articleTitle.simulate(`click`, {preventDefault() {}});
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
-
-  it(`CatalogMoviesList correctly set state.activeFilm`, () => {
-    const app = mount(<CatalogMoviesList filmsList={filmsList}/>);
-    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
-    moviesCard.simulate(`mouseEnter`);
-    expect(app.state(`activeFilm`)).toEqual(filmsList[0]);
-  });
-
-
-  it(`CatalogMoviesList correctly remove state.activeFilm`, () => {
-    const app = mount(<CatalogMoviesList filmsList={filmsList}/>);
-    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
-    moviesCard.simulate(`mouseLeave`);
-    expect(app.state(`activeFilm`)).toEqual(null);
-  });
-
 });

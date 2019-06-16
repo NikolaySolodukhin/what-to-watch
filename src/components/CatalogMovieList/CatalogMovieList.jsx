@@ -1,48 +1,38 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import SmallMovieCard from './../SmallMovieCard/SmallMovieCard.jsx';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 
-class CatalogMoviesList extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeFilm: null,
-    };
-  }
+import {SmallMovieCard} from './../SmallMovieCard/SmallMovieCard.jsx';
 
-  _onMouseEnterCard(film) {
-    this.setState({
-      activeFilm: film,
-    });
-  }
-
-  _onMouseLeaveCard() {
-    this.setState({
-      activeFilm: null,
-    });
-  }
-
-  render() {
-    const {filmsList, onTitleClick} = this.props;
-    return (
-      <div className="catalog__movies-list">
-        {filmsList.map((film) => {
-          return <SmallMovieCard
-            key={film.id}
-            film={film}
-            onTitleClick={onTitleClick}
-            onMouseEnterCard={() => this._onMouseEnterCard(film)}
-            onMouseLeaveCard={() => this._onMouseLeaveCard()}
-          />;
-        })}
-      </div>
-    );
-  }
+function CatalogMoviesList(props) {
+  const {
+    filmsList,
+    onTitleClick,
+    activeFilm,
+    setActiveFilm,
+    removeActiveFilm,
+  } = props;
+  return (
+    <div className="catalog__movies-list">
+      {filmsList.map((film) => {
+        return <SmallMovieCard
+          key={film.id}
+          film={film}
+          onTitleClick={onTitleClick}
+          isActive={Boolean(activeFilm && activeFilm.id === film.id)}
+          onMouseEnterCard={() => setActiveFilm(film)}
+          onMouseLeaveCard={() => removeActiveFilm(film)}
+        />;
+      })}
+    </div>
+  );
 }
 
 CatalogMoviesList.propTypes = {
   filmsList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeFilm: PropTypes.object || PropTypes.null,
+  setActiveFilm: PropTypes.func,
+  removeActiveFilm: PropTypes.func,
   onTitleClick: PropTypes.func,
 };
 
