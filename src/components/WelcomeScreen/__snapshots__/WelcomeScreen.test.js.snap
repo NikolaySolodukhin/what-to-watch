@@ -255,7 +255,7 @@ exports[`<WelcomeScreen/> WelcomeScreen renders correctly 1`] = `
       <div
         className="catalog__movies-list"
       >
-        <ConnectFunction
+        <WithActiveFilm
           onTitleClick={[MockFunction]}
         />
       </div>

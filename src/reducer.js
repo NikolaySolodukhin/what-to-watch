@@ -1,5 +1,5 @@
-import {genres} from "./components/mocks/genre";
-import {filmsList} from "./components/mocks/films";
+import {genres} from './components/mocks/genre';
+import {filmsList} from './components/mocks/films';
 
 const initialState = {
   currentGenreId: 0,

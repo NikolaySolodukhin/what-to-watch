@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 Enzyme.configure({adapter: new Adapter()});
 
-import {GenresList} from "./GenreList";
+import {GenresList} from './GenreList';
 
 describe(`<CatalogGenresList/>`, () => {
   it(`CatalogGenresList renders correctly`, () => {

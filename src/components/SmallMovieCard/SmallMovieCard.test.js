@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SmallMovieCard from "./SmallMovieCard";
+import {SmallMovieCard} from './SmallMovieCard';
 
 describe(`<SmallMovieCard/>`, () => {
   it(`SmallMovieCard renders correctly`, () => {
@@ -12,7 +12,7 @@ describe(`<SmallMovieCard/>`, () => {
     };
     const onTitleClick = jest.fn();
     const tree = renderer
-      .create(<SmallMovieCard film={film} onTitleClick={onTitleClick} />)
+      .create(<SmallMovieCard film={film} isActive={false} onTitleClick={onTitleClick} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

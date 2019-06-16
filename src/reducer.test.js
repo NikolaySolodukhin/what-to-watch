@@ -1,6 +1,6 @@
-import {ActionType, ActionCreator, reducer} from "./reducer";
-import {genres} from "./components/mocks/genre";
-import {filmsList} from "./components/mocks/films";
+import {ActionType, ActionCreator, reducer} from './reducer';
+import {genres} from './components/mocks/genre';
+import {filmsList} from './components/mocks/films';
 
 describe(`Business logic is correct`, () => {
   it(`Action creators work correctly`, () => {

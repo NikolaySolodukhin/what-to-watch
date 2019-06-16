@@ -1,7 +1,11 @@
-import React, {Fragment, PureComponent} from "react";
-import PropTypes from "prop-types";
-import CatalogMoviesList from "./../CatalogMovieList/CatalogMovieList.jsx";
-import GenresList from "./../GenreList/GenreList.jsx";
+import React, {Fragment, PureComponent} from 'react';
+import PropTypes from 'prop-types';
+
+import CatalogMoviesList from './../CatalogMovieList/CatalogMovieList.jsx';
+import GenresList from './../GenreList/GenreList.jsx';
+import withActiveFilm from "./../hocs/WithActiveFilm/WithActiveFilm";
+
+const CatalogMoviesListWrap = withActiveFilm(CatalogMoviesList);
 
 export default class WelcomeScreen extends PureComponent {
   render() {
@@ -109,7 +113,7 @@ export default class WelcomeScreen extends PureComponent {
           <section className="catalog">
             <GenresList/>
             <div className="catalog__movies-list">
-              <CatalogMoviesList
+              <CatalogMoviesListWrap
                 onTitleClick={onTitleClick}/>
             </div>
           </section>
