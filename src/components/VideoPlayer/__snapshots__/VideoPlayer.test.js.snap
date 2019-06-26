@@ -7,8 +7,8 @@ exports[`<VideoPlayer/> VideoPlayer renders correctly 1`] = `
   height="175"
   muted={true}
   playsInline={true}
-  poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-  src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+  poster="poster:path"
+  src="src:path"
   width="280"
 />
 `;

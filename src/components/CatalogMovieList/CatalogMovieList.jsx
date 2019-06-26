@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {getActiveFilms} from './../../reducer/catalog/selectors';
 import {SmallMovieCard} from './../SmallMovieCard/SmallMovieCard.jsx';
 
 function CatalogMoviesList(props) {
@@ -37,7 +38,7 @@ CatalogMoviesList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  filmsList: state.filmsList,
+  filmsList: getActiveFilms(state),
 });
 
 export {CatalogMoviesList};
