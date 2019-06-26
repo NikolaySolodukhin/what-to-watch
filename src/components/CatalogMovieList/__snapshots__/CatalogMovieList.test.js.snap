@@ -13,9 +13,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="Fantastic Beasts"
         height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
       />
     </div>
@@ -26,9 +24,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      >
-        Fantastic Beasts
-      </a>
+      />
     </h3>
   </article>
   <article
@@ -40,9 +36,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="Bohemian Rhapsody"
         height="175"
-        src="img/bohemian-rhapsody.jpg"
         width="280"
       />
     </div>
@@ -53,9 +47,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      >
-        Bohemian Rhapsody
-      </a>
+      />
     </h3>
   </article>
   <article
@@ -67,9 +59,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="Macbeth"
         height="175"
-        src="img/macbeth.jpg"
         width="280"
       />
     </div>
@@ -80,9 +70,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      >
-        Macbeth
-      </a>
+      />
     </h3>
   </article>
   <article
@@ -94,9 +82,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="Aviator"
         height="175"
-        src="img/aviator.jpg"
         width="280"
       />
     </div>
@@ -107,9 +93,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      >
-        Aviator
-      </a>
+      />
     </h3>
   </article>
   <article
@@ -121,9 +105,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
-        alt="We need to talk about Kevin"
         height="175"
-        src="img/we-need-to-talk-about-kevin.jpg"
         width="280"
       />
     </div>
@@ -134,9 +116,7 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      >
-        We need to talk about Kevin
-      </a>
+      />
     </h3>
   </article>
 </div>
