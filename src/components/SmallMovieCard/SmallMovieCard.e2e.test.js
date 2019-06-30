@@ -1,32 +1,50 @@
 import React from 'react';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 import {SmallMovieCard} from './SmallMovieCard';
 
 Enzyme.configure({adapter: new Adapter()});
 
 describe(`<SmallMovieCard/>`, () => {
+  jest.useFakeTimers();
+
   const film = {
     id: 1,
-    title: `Fantastic Beasts`,
-    image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
+    genreId: 1,
+    backgroundColor: `white`,
+    backgroundImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    description: `Film`,
+    director: `Raccoon`,
+    genre: `comedian`,
+    isFavorite: false,
+    name: `Fantastic Beasts`,
+    posterImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    previewVideoLink: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    rating: 4,
+    released: 2018,
+    runTime: 1990,
+    scoresCount: 10,
+    starring: [],
+    videoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   };
 
-  it(`SmallMovieCard correctly eval callback mouseEnter`, () => {
-    const mouseEnterHandler = jest.fn();
-    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} onMouseEnterCard={mouseEnterHandler}/>);
+  it(`SmallMovieCard correctly eval callback setActiveFilm`, () => {
+    const setActiveFilmHandler = jest.fn();
+    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} setActiveFilm={setActiveFilmHandler}/>);
     const article = smallMovieCard.find(`.small-movie-card.catalog__movies-card`);
     article.simulate(`mouseEnter`, {preventDefault() {}});
-    expect(mouseEnterHandler).toHaveBeenCalledTimes(1);
+    jest.runAllTimers();
+    expect(setActiveFilmHandler).toHaveBeenCalledTimes(1);
   });
 
-  it(`SmallMovieCard correctly eval callback mouseLeave`, () => {
-    const mouseLeaveHandler = jest.fn();
-    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} onMouseLeaveCard={mouseLeaveHandler}/>);
+  it(`SmallMovieCard correctly eval callback removeActiveFilm`, () => {
+    const removeActiveFilmHandler = jest.fn();
+    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} removeActiveFilm={removeActiveFilmHandler}/>);
     const article = smallMovieCard.find(`.small-movie-card.catalog__movies-card`);
     article.simulate(`mouseLeave`, {preventDefault() {}});
-    expect(mouseLeaveHandler).toHaveBeenCalledTimes(1);
+    expect(removeActiveFilmHandler).toHaveBeenCalledTimes(1);
   });
 
 });

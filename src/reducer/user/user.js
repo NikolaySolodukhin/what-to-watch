@@ -1,5 +1,3 @@
-import Cookies from 'js-cookie';
-
 const initialState = {
   user: {},
   loginError: ``,
@@ -48,13 +46,7 @@ export const Operation = {
       .catch(() => {
         dispatch(ActionCreator.unsetUser());
       }),
-  checkLoginUser: () => (dispatch) => {
-    const isAuth = Cookies.get(`authToken`);
-    if (isAuth) {
-      return dispatch(Operation.fetchUser());
-    }
-    return false;
-  }
+  checkLoginUser: () => (dispatch) => dispatch(Operation.fetchUser())
 };
 
 export const reducer = (state = initialState, action) => {

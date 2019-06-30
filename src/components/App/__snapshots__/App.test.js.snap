@@ -1,7 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App/> App renders correctly 1`] = `
-<WelcomeScreen
-  onTitleClick={[Function]}
-/>
+<Switch>
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(WelcomeScreen)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/"
+  />
+  <ConnectFunction
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(PageMyList)",
+        "type": [Function],
+      }
+    }
+    path="/my-list"
+  />
+  <ConnectFunction
+    component={[Function]}
+    exact={true}
+    path="/login"
+  />
+</Switch>
 `;

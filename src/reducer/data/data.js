@@ -3,35 +3,59 @@ import {adapterFilms, adapterGenres} from "./../../utils";
 const initialState = {
   genres: [],
   films: [],
+  favorite: [],
 };
 
 export const ActionType = {
-  SET_DATA: `SET_DATA`,
+  SET_FILMS: `SET_FILMS`,
+  SET_GENRE: `SET_GENRE`,
+  SET_FAVORITE: `SET_FAVORITE`,
 };
 
 const ActionCreator = {
-  setData: (payload) => ({
-    type: ActionType.SET_DATA,
+  setFilms: (payload) => ({
+    type: ActionType.SET_FILMS,
+    payload,
+  }),
+  setGenre: (payload) => ({
+    type: ActionType.SET_GENRE,
+    payload,
+  }),
+  setFavorite: (payload) => ({
+    type: ActionType.SET_GENRE,
     payload,
   }),
 };
 
 export const Operation = {
-  loadData: () => (dispatch, _getState, api) => {
-    return api.get(`/films`)
+  loadFilmsAndGenre: () => (dispatch, _getState, api) => api.get(`/films`)
       .then((response) => {
-        dispatch(ActionCreator.setData(response.data));
-      });
-  }
+        dispatch(ActionCreator.setFilms(response.data));
+        dispatch(ActionCreator.setGenre(response.data));
+      }),
+  loadFavorite: () => (dispatch, _getState, api) => api.get(`/favorite`)
+      .then((response) => {
+        dispatch(ActionCreator.setFavorite(response.data));
+      })
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.SET_DATA:
+    case ActionType.SET_FILMS:
       return {
         ...state,
         genres: adapterGenres(action.payload),
         films: adapterFilms(action.payload),
+      };
+    case ActionType.SET_GENRE:
+      return {
+        ...state,
+        genres: adapterGenres(action.payload),
+      };
+    case ActionType.SET_FAVORITE:
+      return {
+        ...state,
+        favorite: adapterFilms(action.payload),
       };
     default:
       return state;

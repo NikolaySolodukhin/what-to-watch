@@ -8,8 +8,12 @@ export const createAPI = () => {
   });
 
   const onSuccess = (response) => response;
-  const onFail = (err) => {
-    throw err;
+  const onFail = (error) => {
+    if (error.response.status === 403) {
+      history.pushState(null, null, `/login`);
+      return;
+    }
+    throw error;
   };
 
   api.interceptors.response.use(onSuccess, onFail);
