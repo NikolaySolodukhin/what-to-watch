@@ -1,6 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import {BrowserRouter} from 'react-router-dom';
+
 import CatalogMoviesList from './CatalogMovieList';
+
 
 describe(`CatalogMoviesList`, () => {
   it(`CatalogMoviesList renders correctly`, () => {
@@ -27,7 +30,11 @@ describe(`CatalogMoviesList`, () => {
       }],
     };
     const tree = renderer
-      .create(<CatalogMoviesList filmsList={mockProps.filmsList} />)
+      .create(
+          <BrowserRouter>
+            <CatalogMoviesList filmsList={mockProps.filmsList} />
+          </BrowserRouter>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

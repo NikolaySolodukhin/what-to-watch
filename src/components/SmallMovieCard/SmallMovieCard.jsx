@@ -1,34 +1,47 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
-import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import VideoPlayer from '../VideoPlayer/VideoPlayer.jsx';
 
-export function SmallMovieCard(props) {
-  const {film, isActive, setActiveFilm, removeActiveFilm} = props;
-  let timeOut = null;
+export default class SmallMovieCard extends PureComponent {
+  constructor(props) {
+    super(props);
+    this._timeOut = null;
+    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
+    this.mouseLeaveHandler = this.mouseLeaveHandler.bind(this);
+  }
 
-  const mouseEnterHandler = () => {
-    timeOut = setTimeout(() => {
-      setActiveFilm();
-      clearTimeout(timeOut);
+  mouseEnterHandler() {
+    this._timeOut = setTimeout(() => {
+      this.props.setActiveFilm();
+      clearTimeout(this._timeOut);
     }, 1000);
-  };
+  }
 
-  const mouseLeaveHandler = () => {
-    removeActiveFilm();
-    clearTimeout(timeOut);
-  };
-  return (
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
-      <div className="small-movie-card__image">
-        { isActive && <VideoPlayer src={film.previewVideoLink} poster={film.previewImage} muted/> }
-        { !isActive && <img src={film.previewImage} alt={film.name} width="280" height="175"/> }
-      </div>
-      <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
-      </h3>
-    </article>
-  );
+  mouseLeaveHandler() {
+    this.props.removeActiveFilm();
+    clearTimeout(this._timeOut);
+  }
+
+  componentWillUnmount() {
+    this.mouseLeaveHandler();
+  }
+
+  render() {
+    const {film, isActive} = this.props;
+    return (
+      <article className="small-movie-card catalog__movies-card" onMouseEnter={this.mouseEnterHandler} onMouseLeave={this.mouseLeaveHandler}>
+        <div className="small-movie-card__image">
+          {isActive && <VideoPlayer src={film.previewVideoLink} poster={film.previewImage} muted/>}
+          {!isActive && <img src={film.previewImage} alt={film.name} width="280" height="175"/>}
+        </div>
+        <h3 className="small-movie-card__title">
+          <Link to={`/film/${film.id}`} className="small-movie-card__link">{film.name}</Link>
+        </h3>
+      </article>
+    );
+  }
 }
 
 SmallMovieCard.propTypes = {

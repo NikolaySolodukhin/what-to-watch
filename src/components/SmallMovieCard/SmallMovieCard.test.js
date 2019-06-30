@@ -1,6 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {SmallMovieCard} from './SmallMovieCard';
+import {BrowserRouter} from 'react-router-dom';
+
+import SmallMovieCard from './SmallMovieCard';
 
 describe(`<SmallMovieCard/>`, () => {
   it(`SmallMovieCard renders correctly`, () => {
@@ -25,7 +27,10 @@ describe(`<SmallMovieCard/>`, () => {
       videoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
     };
     const tree = renderer
-      .create(<SmallMovieCard film={film} isActive={false} />)
+      .create(
+          <BrowserRouter>
+            <SmallMovieCard film={film} isActive={false} />
+          </BrowserRouter>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

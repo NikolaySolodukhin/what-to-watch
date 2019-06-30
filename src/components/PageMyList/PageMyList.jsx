@@ -4,20 +4,16 @@ import {connect} from 'react-redux';
 
 import Header from './../../components/Header/Header.jsx';
 import Footer from './../../components/Footer/Footer.jsx';
-import {Operation as OperationData} from './../../reducer/data/data';
 import {getFavorite} from './../../reducer/favorite/selectors';
 import CatalogMovieList from './../../components/CatalogMovieList/CatalogMovieList.jsx';
 
 class PageMyList extends PureComponent {
-  componentDidMount() {
-    this.props.loadFavorite();
-  }
-
   render() {
+    const {favorite} = this.props;
     return (
       <div className="user-page">
         <Header headerTitle={`My list`} withAuth/>
-        <CatalogMovieList filmsList={this.props.favorite}/>
+        <CatalogMovieList filmsList={favorite}/>
         <Footer/>
       </div>);
   }
@@ -25,7 +21,6 @@ class PageMyList extends PureComponent {
 
 PageMyList.propTypes = {
   favorite: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loadFavorite: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -33,9 +28,5 @@ const mapStateToProps = (state, ownProps) => ({
   favorite: getFavorite(state)
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  loadFavorite: () => dispatch(OperationData.loadFavorite())
-});
-
 export {PageMyList};
-export default connect(mapStateToProps, mapDispatchToProps)(PageMyList);
+export default connect(mapStateToProps)(PageMyList);

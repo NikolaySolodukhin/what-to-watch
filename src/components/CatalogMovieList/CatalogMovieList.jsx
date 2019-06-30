@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {SmallMovieCard} from './../SmallMovieCard/SmallMovieCard.jsx';
+import SmallMovieCard from './../SmallMovieCard/SmallMovieCard.jsx';
 import withActiveFilm from './../hocs/WithActiveFilm/WithActiveFilm.jsx';
 const SmallMovieCardWrap = withActiveFilm(SmallMovieCard);
 
