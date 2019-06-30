@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {getFavoriteIdList} from './../../reducer/favorite/selectors';
 import {Operation as OperationFavorite} from './../../reducer/favorite/favorite';
@@ -53,7 +54,7 @@ function MovieCardInfo(props) {
                 <span>My list</span>
               </button>
             )}
-            <a href="add-review.html" className="btn movie-card__button">Add review</a>
+            <Link to={`/film/${film.id}/review`} className="btn movie-card__button">Add review</Link>
           </div>
         </div>
       </div>
@@ -62,7 +63,25 @@ function MovieCardInfo(props) {
 
 MovieCardInfo.propTypes = {
   withPoser: PropTypes.bool,
-  film: PropTypes.object.isRequired,
+  film: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
+    backgroundImage: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    isFavorite: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    posterImage: PropTypes.string.isRequired,
+    previewImage: PropTypes.string.isRequired,
+    previewVideoLink: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    released: PropTypes.number.isRequired,
+    runTime: PropTypes.number.isRequired,
+    scoresCount: PropTypes.number.isRequired,
+    starring: PropTypes.array.isRequired,
+    videoLink: PropTypes.string.isRequired
+  }),
   favoriteIdList: PropTypes.array.isRequired,
   addFavorite: PropTypes.func,
   removeFavorite: PropTypes.func,

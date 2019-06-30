@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCardFullReviews/> MovieCardFullReviews renders correctly 1`] = `
+<div
+  className="movie-card__reviews movie-card__row"
+>
+  <div
+    className="movie-card__reviews-col"
+  >
+    <div
+      className="review"
+      key="Unfortunately we don't have a reliable way to tell the true ratings of a movie."
+    >
+      <blockquote
+        className="review__quote"
+      >
+        <p
+          className="review__text"
+        >
+          Unfortunately we don't have a reliable way to tell the true ratings of a movie.
+        </p>
+        <footer
+          className="review__details"
+        >
+          <cite
+            className="review__author"
+          >
+            Max
+          </cite>
+          <time
+            className="review__date"
+          >
+            June 18, 2019
+          </time>
+        </footer>
+      </blockquote>
+      <div
+        className="review__rating"
+      >
+        2
+      </div>
+    </div>
+  </div>
+  <div
+    className="movie-card__reviews-col"
+  />
+</div>
+`;

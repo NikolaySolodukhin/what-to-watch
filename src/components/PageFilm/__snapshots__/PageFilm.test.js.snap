@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageFilm/> PageFilm renders correctly 1`] = `
+<Fragment>
+  <div
+    className="movie-card movie-card--full"
+  >
+    <div
+      className="movie-card__hero"
+    >
+      <div
+        className="movie-card__bg"
+      >
+        <img
+          alt="Fantastic Beasts"
+          src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        />
+      </div>
+      <h1
+        className="visually-hidden"
+      >
+        WTW
+      </h1>
+      <ConnectFunction
+        withAuth={true}
+      />
+      <ConnectFunction
+        film={
+          Object {
+            "backgroundColor": "white",
+            "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+            "description": "Film",
+            "director": "Raccoon",
+            "genre": "comedian",
+            "genreId": 1,
+            "id": 1,
+            "isFavorite": false,
+            "name": "Fantastic Beasts",
+            "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+            "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+            "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+            "rating": 4,
+            "released": 2018,
+            "runTime": 1990,
+            "scoresCount": 10,
+            "starring": Array [],
+            "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+          }
+        }
+      />
+    </div>
+    <MovieCardFull
+      film={
+        Object {
+          "backgroundColor": "white",
+          "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+          "description": "Film",
+          "director": "Raccoon",
+          "genre": "comedian",
+          "genreId": 1,
+          "id": 1,
+          "isFavorite": false,
+          "name": "Fantastic Beasts",
+          "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+          "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+          "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+          "rating": 4,
+          "released": 2018,
+          "runTime": 1990,
+          "scoresCount": 10,
+          "starring": Array [],
+          "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+        }
+      }
+      reviews={
+        Array [
+          Object {
+            "comment": "Unfortunately we don't have a reliable way to tell the true ratings of a movie.",
+            "date": "2019-06-18T20:42:47.046Z",
+            "id": 1,
+            "rating": 2,
+            "user": Object {
+              "id": 10,
+              "name": "Max",
+            },
+          },
+        ]
+      }
+    />
+  </div>
+  <div
+    className="page-content"
+  >
+    <section
+      className="catalog catalog--like-this"
+    >
+      <h2
+        className="catalog__title"
+      >
+        More like this
+      </h2>
+      <CatalogMoviesList
+        filmsList={
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "description": "Film",
+              "director": "Raccoon",
+              "genre": "comedian",
+              "genreId": 1,
+              "id": 1,
+              "isFavorite": false,
+              "name": "Fantastic Beasts",
+              "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "rating": 4,
+              "released": 2018,
+              "runTime": 1990,
+              "scoresCount": 10,
+              "starring": Array [],
+              "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+            },
+          ]
+        }
+      />
+    </section>
+    <Footer />
+  </div>
+</Fragment>
+`;
