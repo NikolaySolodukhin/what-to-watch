@@ -10,6 +10,8 @@ import {Operation as OperationUser} from './reducer/user/user';
 import {createAPI} from './api';
 import App from './components/App/App.jsx';
 import reducer from './reducer/reducer';
+import {Operation as OperationFilms} from './reducer/films/films';
+import {Operation as OperationFavorite} from './reducer/favorite/favorite';
 
 async function init() {
   const api = createAPI();
@@ -23,6 +25,12 @@ async function init() {
   );
 
   await store.dispatch(OperationUser.checkLoginUser());
+  await Promise.all([
+    store.dispatch(OperationFilms.loadFilmsAndGenre()),
+    store.dispatch(OperationFilms.loadPromoFilm()),
+    store.dispatch(OperationFavorite.loadFavorite()),
+  ]);
+
   ReactDOM.render(
       <Provider store={store}>
         <BrowserRouter>

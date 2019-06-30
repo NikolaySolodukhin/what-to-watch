@@ -2,9 +2,8 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {getGenres} from './../../reducer/data/selectors';
-import {getActiveGenre} from './../../reducer/catalog/selectors';
-import {ActionCreator} from './../../reducer/catalog/catalog';
+import {getActiveGenre, getGenres} from './../../reducer/films/selectors';
+import {ActionCreator} from './../../reducer/films/films';
 
 function GenresList(props) {
   const {activeGenre, genres, onGenreLinkClick} = props;

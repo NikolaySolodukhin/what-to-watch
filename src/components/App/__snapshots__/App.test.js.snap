@@ -15,6 +15,18 @@ exports[`<App/> App renders correctly 1`] = `
     exact={true}
     path="/"
   />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(PageFilm)",
+        "type": [Function],
+      }
+    }
+    path="/film/:id"
+  />
   <ConnectFunction
     component={
       Object {

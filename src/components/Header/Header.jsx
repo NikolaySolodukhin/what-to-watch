@@ -27,7 +27,7 @@ function Header(props) {
       {withAuth && isLoggedIn && (
         <Link to="/my-list" className="user-block">
           <div className="user-block__avatar">
-            <img src={user.avatar_url} alt={user.name} width="63" height="63"/>
+            <img src={`https://es31-server.appspot.com/${user.avatar_url}`} alt={user.name} width="63" height="63"/>
           </div>
         </Link>
       )}

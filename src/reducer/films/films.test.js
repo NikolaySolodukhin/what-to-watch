@@ -1,11 +1,16 @@
 import MockAdapter from 'axios-mock-adapter';
 
 import {createAPI} from './../../api';
-import {
-  ActionType,
-  Operation,
-} from './../../reducer/data/data';
+import {ActionType, ActionCreator, Operation} from './../../reducer/films/films';
 
+describe(`Business logic is correct`, () => {
+  it(`Action creators work correctly`, () => {
+    expect(ActionCreator.setActiveGenre(`Genre`)).toEqual({
+      type: ActionType.SET_ACTIVE_GENRE,
+      payload: `Genre`,
+    });
+  });
+});
 
 describe(`Reducer works correctly`, () => {
   it(`Should make a correct API call to /films`, function () {
