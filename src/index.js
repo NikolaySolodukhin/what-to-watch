@@ -4,13 +4,12 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import {compose} from 'recompose';
+import {BrowserRouter} from 'react-router-dom';
 
-import {Operation as OperationData} from './reducer/data/data';
 import {Operation as OperationUser} from './reducer/user/user';
 import {createAPI} from './api';
 import App from './components/App/App.jsx';
 import reducer from './reducer/reducer';
-import WithAuth from './components/hocs/WithAuth/WithAuth';
 
 async function init() {
   const api = createAPI();
@@ -19,17 +18,16 @@ async function init() {
       reducer,
       compose(
           applyMiddleware(thunk.withExtraArgument(api)),
-          window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+          window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (a) => a
       )
   );
 
-  await store.dispatch(OperationData.loadData());
   await store.dispatch(OperationUser.checkLoginUser());
   ReactDOM.render(
       <Provider store={store}>
-        <WithAuth>
+        <BrowserRouter>
           <App/>
-        </WithAuth>
+        </BrowserRouter>
       </Provider>,
       document.getElementById(`root`)
   );

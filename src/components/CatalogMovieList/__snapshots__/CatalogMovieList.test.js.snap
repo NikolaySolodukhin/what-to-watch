@@ -13,110 +13,21 @@ exports[`CatalogMoviesList CatalogMoviesList renders correctly 1`] = `
       className="small-movie-card__image"
     >
       <img
+        alt="Fantastic Beasts"
         height="175"
+        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
         width="280"
       />
     </div>
     <h3
       className="small-movie-card__title"
-      onClick={[MockFunction]}
     >
       <a
         className="small-movie-card__link"
         href="movie-page.html"
-      />
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <img
-        height="175"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-      onClick={[MockFunction]}
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      />
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <img
-        height="175"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-      onClick={[MockFunction]}
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      />
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <img
-        height="175"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-      onClick={[MockFunction]}
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      />
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="small-movie-card__image"
-    >
-      <img
-        height="175"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-      onClick={[MockFunction]}
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      />
+      >
+        Fantastic Beasts
+      </a>
     </h3>
   </article>
 </div>
