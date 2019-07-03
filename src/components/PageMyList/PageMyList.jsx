@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
@@ -7,16 +7,13 @@ import Footer from './../../components/Footer/Footer.jsx';
 import {getFavorite} from './../../reducer/favorite/selectors';
 import CatalogMovieList from './../../components/CatalogMovieList/CatalogMovieList.jsx';
 
-class PageMyList extends PureComponent {
-  render() {
-    const {favorite} = this.props;
-    return (
-      <div className="user-page">
-        <Header headerTitle={`My list`} withAuth/>
-        <CatalogMovieList filmsList={favorite}/>
-        <Footer/>
-      </div>);
-  }
+function PageMyList({favorite}) {
+  return (
+    <div className="user-page">
+      <Header headerTitle={`My list`} withAuth/>
+      <CatalogMovieList filmsList={favorite}/>
+      <Footer/>
+    </div>);
 }
 
 PageMyList.propTypes = {

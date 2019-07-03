@@ -12,16 +12,22 @@ exports[`<MovieCardInfo/> MovieCardInfo renders correctly 1`] = `
     >
       <h2
         className="movie-card__title"
-      />
+      >
+        Fantastic Beasts
+      </h2>
       <p
         className="movie-card__meta"
       >
         <span
           className="movie-card__genre"
-        />
+        >
+          comedian
+        </span>
         <span
           className="movie-card__year"
-        />
+        >
+          2018
+        </span>
       </p>
       <div
         className="movie-card__buttons"

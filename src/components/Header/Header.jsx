@@ -13,7 +13,7 @@ function Header(props) {
     user,
     isLoggedIn,
   } = props;
-  return <>
+  return (
     <header className="page-header user-page__head">
       <div className="logo">
         <Link to="/" className="logo__link">
@@ -37,7 +37,7 @@ function Header(props) {
         </div>
       )}
     </header>
-  </>;
+  );
 }
 
 Header.propTypes = {

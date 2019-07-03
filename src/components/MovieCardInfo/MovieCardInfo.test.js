@@ -3,12 +3,12 @@ import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 
-import {PageFilmReview} from './PageFilmReview.jsx';
+import {MovieCardInfo} from './MovieCardInfo';
 
 Enzyme.configure({adapter: new Adapter()});
 
-describe(`<PageFilmReview/>`, () => {
-  it(`PageFilmReview renders correctly`, () => {
+describe(`<MovieCardInfo/>`, () => {
+  it(`MovieCardInfo renders correctly`, () => {
     const mockProps = {
       film: {
         id: 1,
@@ -29,8 +29,10 @@ describe(`<PageFilmReview/>`, () => {
         scoresCount: 10,
         starring: [],
         videoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-      }};
-    const tree = shallow(<PageFilmReview film={mockProps.film} />);
+      },
+      favoriteIdList: [1]
+    };
+    const tree = shallow(<MovieCardInfo film={mockProps.film} favoriteIdList={mockProps.favoriteIdList}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });
