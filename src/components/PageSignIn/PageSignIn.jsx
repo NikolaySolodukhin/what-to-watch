@@ -1,21 +1,17 @@
-import React, {Fragment, PureComponent} from 'react';
+import React from "react";
 
-import Header from './../../components/Header/Header.jsx';
-import Footer from './../../components/Footer/Footer.jsx';
-import SignIn from './../../components/SignIn/SignIn.jsx';
+import Header from "./../../components/Header/Header.jsx";
+import Footer from "./../../components/Footer/Footer.jsx";
+import SignIn from "./../../components/SignIn/SignIn.jsx";
 
-class PageSignIn extends PureComponent {
-  render() {
-    return (
-      <Fragment>
-        <div className="user-page">
-          <Header headerTitle={`Sign in`} />
-          <SignIn />
-          <Footer />
-        </div>
-      </Fragment>
-    );
-  }
+function PageSignIn() {
+  return (
+    <div className="user-page">
+      <Header headerTitle={`Sign in`} />
+      <SignIn />
+      <Footer />
+    </div>
+  );
 }
 
-export default PageSignIn;
+export {PageSignIn};

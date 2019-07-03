@@ -8,7 +8,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 import {Operation as OperationUser} from './reducer/user/user';
 import {createAPI} from './api';
-import App from './components/App/App.jsx';
+import {App} from './components/App/App.jsx';
 import reducer from './reducer/reducer';
 import {Operation as OperationFilms} from './reducer/films/films';
 import {Operation as OperationFavorite} from './reducer/favorite/favorite';

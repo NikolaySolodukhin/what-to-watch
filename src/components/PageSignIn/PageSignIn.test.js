@@ -3,7 +3,7 @@ import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 
-import PageSignIn from "./PageSignIn";
+import {PageSignIn} from "./PageSignIn";
 
 Enzyme.configure({adapter: new Adapter()});
 

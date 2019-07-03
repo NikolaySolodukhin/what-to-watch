@@ -10,7 +10,7 @@ export const ActionType = {
   SET_LOGIN_ERROR: `SET_LOGIN_ERROR`
 };
 
-const ActionCreator = {
+export const ActionCreator = {
   setUser: (payload) => ({
     type: ActionType.SET_USER,
     payload
