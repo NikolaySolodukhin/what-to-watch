@@ -3,6 +3,7 @@ import {adapterFilm, adapterFilms, adapterGenres} from './../../utils';
 const initialState = {
   genres: [],
   films: [],
+  reviews: [],
   activeGenre: ``,
   promoFilm: null,
 };
@@ -10,6 +11,7 @@ const initialState = {
 export const ActionType = {
   SET_FILMS: `SET_FILMS`,
   SET_GENRE: `SET_GENRE`,
+  SET_REVIEWS: `SET_REVIEWS`,
   SET_ACTIVE_GENRE: `SET_ACTIVE_GENRE`,
   SET_PROMO_FILM: `SET_PROMO_FILM`,
 };
@@ -35,6 +37,11 @@ export const ActionCreator = {
     type: ActionType.SET_PROMO_FILM,
     payload: film,
   }),
+
+  setReviews: (reviews)=> ({
+    type: ActionType.SET_REVIEWS,
+    payload: reviews,
+  })
 };
 
 export const Operation = {
@@ -45,7 +52,13 @@ export const Operation = {
       }),
 
   loadPromoFilm: () => (dispatch, _getState, api) => api.get(`/films/promo`)
-      .then((response) => dispatch(ActionCreator.setPromoFilm(response.data))).catch(() => {})};
+      .then((response) => dispatch(ActionCreator.setPromoFilm(response.data))).catch(() => {}),
+
+  loadReviews: (filmId) =>(dispatch, _getState, api) => api.get(`/comments/${filmId}`)
+    .then((response) => {
+      dispatch(ActionCreator.setReviews(response.data));
+    })
+};
 
 export const reducer = (state = initialState, action) => {
 
@@ -72,6 +85,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         promoFilm: adapterFilm(action.payload),
+      };
+
+    case ActionType.SET_REVIEWS:
+      return {
+        ...state,
+        reviews: action.payload
       };
 
     default:

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 function Footer() {
-  return <>
+  return <Fragment>
     <footer className="page-footer">
       <div className="logo">
         <a href="main.html" className="logo__link logo__link--light">
@@ -15,7 +15,7 @@ function Footer() {
         <p>© 2019 What to watch Ltd.</p>
       </div>
     </footer>
-  </>;
+  </Fragment>;
 }
 
 export default Footer;

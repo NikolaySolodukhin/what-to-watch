@@ -12,6 +12,8 @@ export const getActiveGenre = (state) => state[NAME_SPACE].activeGenre;
 
 export const getPromoFilm = (state) => state[NAME_SPACE].promoFilm;
 
+export const getReviews = (state) => state[NAME_SPACE].reviews;
+
 export const getFilmById = (state, id) => state[NAME_SPACE].films.find((film) => +film.id === +id) || {};
 
 export const getLikeThisFilmsById = (state, id) => {

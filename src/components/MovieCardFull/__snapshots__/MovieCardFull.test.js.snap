@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCardFull/> MovieCardFull renders correctly 1`] = `
+<div
+  className="movie-card__wrap movie-card__translate-top"
+>
+  <div
+    className="movie-card__info"
+  >
+    <div
+      className="movie-card__poster movie-card__poster--big"
+    >
+      <img
+        alt="Fantastic Beasts"
+        height="327"
+        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        width="218"
+      />
+    </div>
+    <div
+      className="movie-card__desc"
+    >
+      <nav
+        className="movie-nav movie-card__nav"
+      >
+        <ul
+          className="movie-nav__list"
+        >
+          <li
+            className="movie-nav__item"
+          >
+            <NavLink
+              activeClassName="movie-nav__link--active"
+              className="movie-nav__link"
+              exact={true}
+              to="/film/1"
+            >
+              Overview
+            </NavLink>
+          </li>
+          <li
+            className="movie-nav__item"
+          >
+            <NavLink
+              activeClassName="movie-nav__link--active"
+              className="movie-nav__link"
+              to="/film/1/details"
+            >
+              Details
+            </NavLink>
+          </li>
+          <li
+            className="movie-nav__item"
+          >
+            <NavLink
+              activeClassName="movie-nav__link--active"
+              className="movie-nav__link"
+              to="/film/1/reviews"
+            >
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <WithPropsRoute
+          component={[Function]}
+          exact={true}
+          film={
+            Object {
+              "backgroundColor": "white",
+              "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "description": "Film",
+              "director": "Raccoon",
+              "genre": "comedian",
+              "genreId": 1,
+              "id": 1,
+              "isFavorite": false,
+              "name": "Fantastic Beasts",
+              "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "rating": 4,
+              "released": 2018,
+              "runTime": 1990,
+              "scoresCount": 10,
+              "starring": Array [],
+              "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+            }
+          }
+          path="/film/1"
+        />
+        <WithPropsRoute
+          component={[Function]}
+          exact={true}
+          film={
+            Object {
+              "backgroundColor": "white",
+              "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "description": "Film",
+              "director": "Raccoon",
+              "genre": "comedian",
+              "genreId": 1,
+              "id": 1,
+              "isFavorite": false,
+              "name": "Fantastic Beasts",
+              "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "rating": 4,
+              "released": 2018,
+              "runTime": 1990,
+              "scoresCount": 10,
+              "starring": Array [],
+              "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+            }
+          }
+          path="/film/1/details"
+        />
+        <WithPropsRoute
+          component={[Function]}
+          exact={true}
+          film={
+            Object {
+              "backgroundColor": "white",
+              "backgroundImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "description": "Film",
+              "director": "Raccoon",
+              "genre": "comedian",
+              "genreId": 1,
+              "id": 1,
+              "isFavorite": false,
+              "name": "Fantastic Beasts",
+              "posterImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "previewVideoLink": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+              "rating": 4,
+              "released": 2018,
+              "runTime": 1990,
+              "scoresCount": 10,
+              "starring": Array [],
+              "videoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+            }
+          }
+          path="/film/1/reviews"
+          reviews={
+            Array [
+              Object {
+                "comment": "Unfortunately we don't have a reliable way to tell the true ratings of a movie.",
+                "date": "2019-06-18T20:42:47.046Z",
+                "id": 1,
+                "rating": 2,
+                "user": Object {
+                  "id": 10,
+                  "name": "Max",
+                },
+              },
+            ]
+          }
+        />
+      </Switch>
+    </div>
+  </div>
+</div>
+`;

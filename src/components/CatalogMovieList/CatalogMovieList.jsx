@@ -11,12 +11,10 @@ function CatalogMoviesList(props) {
   } = props;
   return (
     <div className="catalog__movies-list">
-      {filmsList.map((film) => {
-        return <SmallMovieCardWrap
-          key={film.id}
-          film={film}
-        />;
-      })}
+      {filmsList.map((film) => <SmallMovieCardWrap
+        key={film.id}
+        film={film}
+      />)}
     </div>
   );
 }
