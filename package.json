@@ -44,6 +44,7 @@
     "recompose": "0.30.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
-    "reselect": "4.0.0"
+    "reselect": "4.0.0",
+    "stylelint-config-htmlacademy": "0.1.4"
   }
 }

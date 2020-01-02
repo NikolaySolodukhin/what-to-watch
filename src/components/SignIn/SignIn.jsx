@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
@@ -33,30 +33,33 @@ class SignIn extends PureComponent {
   }
 
   render() {
-    return <>
-      <div className="sign-in user-page__content">
-        <form className="sign-in__form" onSubmit={this._onSubmitForm}>
-          {this.props.loginError && (
-            <div className="sign-in__message">
-              {this.props.loginError}
+    const {loginError} = this.props;
+    return (
+      <Fragment>
+        <div className="sign-in user-page__content">
+          <form className="sign-in__form" onSubmit={this._onSubmitForm}>
+            {loginError && (
+              <div className="sign-in__message">
+                {loginError}
+              </div>
+            )}
+            <div className="sign-in__fields">
+              <div className="sign-in__field">
+                <input className="sign-in__input" type="email" placeholder="Email address" name="user-email" id="user-email" onChange={this._handleChangeEmail}/>
+                <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
+              </div>
+              <div className="sign-in__field">
+                <input className="sign-in__input" type="password" placeholder="Password" name="user-password" id="user-password" onChange={this._handleChangePassword}/>
+                <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
+              </div>
             </div>
-          )}
-          <div className="sign-in__fields">
-            <div className="sign-in__field">
-              <input className="sign-in__input" type="email" placeholder="Email address" name="user-email" id="user-email" onChange={this._handleChangeEmail}/>
-              <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
+            <div className="sign-in__submit">
+              <button className="sign-in__btn" type="submit">Sign in</button>
             </div>
-            <div className="sign-in__field">
-              <input className="sign-in__input" type="password" placeholder="Password" name="user-password" id="user-password" onChange={this._handleChangePassword}/>
-              <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
-            </div>
-          </div>
-          <div className="sign-in__submit">
-            <button className="sign-in__btn" type="submit">Sign in</button>
-          </div>
-        </form>
-      </div>
-    </>;
+          </form>
+        </div>
+      </Fragment>
+    );
   }
 }
 
